@@ -11,7 +11,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <title>Product Page</title>
     <style>
         body { font-family: Arial; text-align: center; }
-        .btn { padding: 10px 20px; background: green; color: white; text-decoration: none; }
+        form { width: 300px; margin: auto; }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+        }
+        button {
+            padding: 10px;
+            width: 100%;
+            background: green;
+            color: white;
+            border: none;
+        }
     </style>
 </head>
 <body>
@@ -22,14 +34,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <h1>Product Details</h1>
 
-    <img src="https://via.placeholder.com/300" alt="Product">
+    <img src="https://via.placeholder.com/300">
 
     <h2>Stylish Item</h2>
     <p>Price: ₹999</p>
-    <p>This is a trendy and high-quality product perfect for daily use.</p>
 
-    <!-- Buy Now Button -->
-    <a href="thankyou.html" class="btn">Buy Now</a>
+    <h3>Enter Your Details</h3>
+
+    <form action="thankyou.html" method="GET">
+        <input type="text" name="name" placeholder="Full Name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="tel" name="phone" placeholder="Phone Number" required>
+        <textarea name="address" placeholder="Address" required></textarea>
+
+        <button type="submit">Buy Now</button>
+    </form>
 
 </body>
 </html>

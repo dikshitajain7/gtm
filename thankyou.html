@@ -10,31 +10,54 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
     <title>Thank You</title>
     <style>
-        body { font-family: Arial; text-align: center; }
+        body {
+            margin: 0;
+            font-family: 'Poppins';
+            background: url('https://images.unsplash.com/photo-1521335629791-ce4aec67dd47') no-repeat center/cover;
+            color: white;
+            text-align: center;
+        }
+
+        .overlay {
+            background: rgba(0,0,0,0.6);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+            border: 1px solid white;
+            padding: 10px 20px;
+            border-radius: 20px;
+        }
     </style>
 </head>
+
 <body>
     <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KSVN3JLJ"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-    <h1>Thank You for Your Purchase!</h1>
-    <p id="message"></p>
+<div class="overlay">
+    <h1>Thank You for Your Order!</h1>
+    <p id="details"></p>
 
     <a href="index.html">Back to Home</a>
+</div>
 
-    <script>
-        const params = new URLSearchParams(window.location.search);
+<script>
+    const params = new URLSearchParams(window.location.search);
 
-        const name = params.get("name");
-        const email = params.get("email");
-        const phone = params.get("phone");
+    const name = params.get("name");
+    const product = params.get("product");
 
-        document.getElementById("message").innerHTML =
-            "Order placed successfully by <b>" + name + "</b><br>" +
-            "We will contact you at <b>" + phone + "</b>";
-    </script>
+    document.getElementById("details").innerHTML =
+        "Thank you <b>" + name + "</b> for purchasing <b>" + product + "</b>.";
+</script>
 
 </body>
 </html>

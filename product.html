@@ -8,47 +8,93 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-KSVN3JLJ');</script>
 <!-- End Google Tag Manager -->
-    <title>Product Page</title>
+    <title>Product</title>
     <style>
-        body { font-family: Arial; text-align: center; }
-        form { width: 300px; margin: auto; }
-        input, textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 8px 0;
+        body {
+            font-family: 'Poppins';
+            margin: 0;
+            background: linear-gradient(to right, #ffecd2, #fcb69f);
         }
-        button {
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .box {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            display: flex;
+            gap: 30px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        img {
+            width: 250px;
+            border-radius: 10px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input, textarea {
+            margin: 8px 0;
             padding: 10px;
-            width: 100%;
-            background: green;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background: black;
             color: white;
+            padding: 12px;
             border: none;
+            border-radius: 20px;
+            cursor: pointer;
         }
     </style>
 </head>
+
 <body>
     <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KSVN3JLJ"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-    <h1>Product Details</h1>
+<div class="container">
+    <div class="box">
 
-    <img src="https://via.placeholder.com/300">
+        <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b">
 
-    <h2>Stylish Item</h2>
-    <p>Price: ₹999</p>
+        <form action="thankyou.html" method="GET">
+            <h2 id="productName"></h2>
+            <p>Price: ₹999</p>
 
-    <h3>Enter Your Details</h3>
+            <input type="text" name="name" placeholder="Full Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="tel" name="phone" placeholder="Phone Number" required>
+            <textarea name="address" placeholder="Address" required></textarea>
 
-    <form action="thankyou.html" method="GET">
-        <input type="text" name="name" placeholder="Full Name" required>
-        <input type="email" name="email" placeholder="Email" required>
-        <input type="tel" name="phone" placeholder="Phone Number" required>
-        <textarea name="address" placeholder="Address" required></textarea>
+            <input type="hidden" name="product" id="productInput">
 
-        <button type="submit">Buy Now</button>
-    </form>
+            <button type="submit">Buy Now</button>
+        </form>
+
+    </div>
+</div>
+
+<script>
+    const params = new URLSearchParams(window.location.search);
+    const item = params.get("item");
+
+    document.getElementById("productName").innerText = item;
+    document.getElementById("productInput").value = item;
+</script>
 
 </body>
 </html>

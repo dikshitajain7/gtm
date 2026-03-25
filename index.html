@@ -8,27 +8,122 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-KSVN3JLJ');</script>
 <!-- End Google Tag Manager -->
-    <title>My Store - Home</title>
+    <title>SeamStyle - Fashion Store</title>
     <style>
-        body { font-family: Arial; text-align: center; }
-        .btn { padding: 10px 20px; background: black; color: white; text-decoration: none; }
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #f8f9fa, #e0eafc);
+        }
+
+        header {
+            padding: 20px;
+            background: black;
+            color: white;
+            text-align: center;
+            font-size: 24px;
+            letter-spacing: 2px;
+        }
+
+        .hero {
+            background: url('https://images.unsplash.com/photo-1521335629791-ce4aec67dd47') no-repeat center/cover;
+            height: 60vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            padding: 40px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            padding: 15px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 10px;
+            background: black;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+        }
     </style>
 </head>
+
 <body>
     <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KSVN3JLJ"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-    <h1>Welcome to My Store</h1>
-    <p>Trendy & Affordable Products</p>
+<header>SEAMSTYLE</header>
 
-    <img src="https://via.placeholder.com/300">
+<div class="hero">
+    Elevate Your Style
+</div>
 
-    <h2>Featured Product</h2>
-    <p>Stylish Item - ₹999</p>
+<div class="products">
 
-    <a href="product.html" class="btn">View Product</a>
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246">
+        <h3>Jeans</h3>
+        <a href="product.html?item=Jeans" class="btn">Shop Now</a>
+    </div>
+
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab">
+        <h3>Tops</h3>
+        <a href="product.html?item=Tops" class="btn">Shop Now</a>
+    </div>
+
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1519741497674-611481863552">
+        <h3>One Piece</h3>
+        <a href="product.html?item=OnePiece" class="btn">Shop Now</a>
+    </div>
+
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1503342452485-86ff0a5b16d0">
+        <h3>Party Wear</h3>
+        <a href="product.html?item=PartyWear" class="btn">Shop Now</a>
+    </div>
+
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1495121605193-b116b5b09a89">
+        <h3>Casuals</h3>
+        <a href="product.html?item=Casuals" class="btn">Shop Now</a>
+    </div>
+
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d">
+        <h3>Formals</h3>
+        <a href="product.html?item=Formals" class="btn">Shop Now</a>
+    </div>
+
+</div>
 
 </body>
 </html>

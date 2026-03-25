@@ -20,9 +20,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
     <h1>Thank You for Your Purchase!</h1>
-    <p>Your order has been placed successfully.</p>
+    <p id="message"></p>
 
-    <a href="index.html">Go Back to Home</a>
+    <a href="index.html">Back to Home</a>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+
+        const name = params.get("name");
+        const email = params.get("email");
+        const phone = params.get("phone");
+
+        document.getElementById("message").innerHTML =
+            "Order placed successfully by <b>" + name + "</b><br>" +
+            "We will contact you at <b>" + phone + "</b>";
+    </script>
 
 </body>
 </html>
